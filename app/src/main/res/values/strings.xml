@@ -3,4 +3,5 @@
     <string name="solved_cases">Solved Cases</string>
     <string name="open_cases">Open Cases</string>
     <string name="case_locations">Case Locations</string>
+    <string name="add_cases">Add Cases</string>
 </resources>

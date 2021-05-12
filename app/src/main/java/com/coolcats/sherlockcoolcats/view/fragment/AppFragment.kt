@@ -1,4 +1,4 @@
-package com.coolcats.sherlockcoolcats.view
+package com.coolcats.sherlockcoolcats.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,13 +11,12 @@ class AppFragment: Fragment() {
 
     enum class SherlockFragment {
         OPEN_CASES,
-        CLOSED_CASES,
+        NEW_CASES,
         CASE_LOCATIONS
     }
     //how to declare static variable
     companion object{
         const val KEY = "FRAG_KEY"
-
         fun getInstance(fragment: SherlockFragment): AppFragment {
             return AppFragment().also { frag ->
                 frag.arguments = Bundle().also { bndle ->
@@ -40,7 +39,7 @@ class AppFragment: Fragment() {
 
                      SherlockFragment.OPEN_CASES -> inflater.inflate(R.layout.open_cases_fragment_layout, container, false)
 
-                    SherlockFragment.CLOSED_CASES -> inflater.inflate(R.layout.closed_cases_fragment_layout, container, false)
+                    SherlockFragment.NEW_CASES -> inflater.inflate(R.layout.closed_cases_fragment_layout, container, false)
 
                     else ->
                         inflater.inflate(R.layout.case_locations_fragment_layout, container, false)

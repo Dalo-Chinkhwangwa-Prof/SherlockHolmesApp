@@ -1,8 +1,10 @@
-package com.coolcats.sherlockcoolcats.view
+package com.coolcats.sherlockcoolcats.view.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.coolcats.sherlockcoolcats.view.fragment.AppFragment
+import com.coolcats.sherlockcoolcats.view.fragment.CaseLocationsFragment
 
 class MainViewPagerAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
@@ -10,9 +12,9 @@ class MainViewPagerAdapter(fragmentManager: FragmentManager): FragmentPagerAdapt
 
     override fun getItem(position: Int): Fragment {
         return when(position){
-            0 -> AppFragment.getInstance(AppFragment.SherlockFragment.CLOSED_CASES)
+            0 -> AppFragment.getInstance(AppFragment.SherlockFragment.NEW_CASES)
             1 -> AppFragment.getInstance(AppFragment.SherlockFragment.OPEN_CASES)
-            else -> AppFragment.getInstance(AppFragment.SherlockFragment.CASE_LOCATIONS)
+            else -> CaseLocationsFragment()
         }
     }
 }
